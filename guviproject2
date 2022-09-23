@@ -1,0 +1,173 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+
+
+class orangehrm:
+    url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+    driver = webdriver.Firefox()
+    driver.maximize_window()
+
+    # This is a function for login page code
+    def login(self):
+        username = "Admin"
+        password = "admin123"
+        self.driver.get(self.url)
+        # timer For 5 seconds  to load all elements
+        time.sleep(5)
+
+        #This code is use for executing the username by xpath
+        username_xpath = '//*[@id="app"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input'
+        username1 = self.driver.find_element(by=By.XPATH, value=username_xpath)
+        username1.send_keys(username)
+        # timer For 2 seconds  to load all elements
+        time.sleep(2)
+
+        # This code is use for executing the password by xpath
+        password_xpath= '//*[@id="app"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[2]/div/div[2]/input'
+        password1 = self.driver.find_element(by=By.XPATH, value=password_xpath)
+        password1.send_keys(password)
+        # timer For 2 seconds  to load all elements
+        time.sleep(2)
+
+        # This code is use for executing to submit by xpath
+        login_button = '//*[@id="app"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button'
+        login1 = self.driver.find_element(by=By.XPATH, value=login_button)
+        login1.click()
+        # timer For 2 seconds  to load all elements
+        time.sleep(2)
+
+    # This is a function for create employee page code
+    def createemployee(self):
+        employeefirstname = "sudhir"
+        employeemiddlename = "raja"
+        employeelastname = "A"
+
+        # This code is use for executing to add employee by xpath
+        addbutton_xpath = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div[2]/div[1]/button'
+        addbutton1 = self.driver.find_element(by=By.XPATH, value=addbutton_xpath)
+        addbutton1.click()
+        time.sleep(2)
+
+        # This code is use for executing to add employee firstname by xpath
+        employeefirstname_xpath = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[1]/div[1]/div/div/div[2]/div[1]/div[2]/input'
+        firstname1 = self.driver.find_element(by=By.XPATH, value=employeefirstname_xpath)
+        firstname1.send_keys(employeefirstname)
+        time.sleep(2)
+
+        # This code is use for executing to add employee middlename by xpath
+        employeemiddlename_xpath = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[1]/div[1]/div/div/div[2]/div[2]/div[2]/input'
+        employeemiddlename1 = self.driver.find_element(by=By.XPATH, value=employeemiddlename_xpath)
+        employeemiddlename1.send_keys(employeemiddlename)
+        time.sleep(2)
+        # This code is use for executing to add employee lastname by xpath
+        employeelastname_xpath = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[1]/div[1]/div/div/div[2]/div[3]/div[2]/input'
+        employeelastname1 = self.driver.find_element(by=By.XPATH, value=employeelastname_xpath)
+        employeelastname1.send_keys(employeelastname)
+        time.sleep(2)
+
+        # This code is use for executing to save by xpath
+        savebutton_xpath = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[2]/button[2]'
+        savebutton1 = self.driver.find_element(by=By.XPATH, value=savebutton_xpath)
+        savebutton1.click()
+        time.sleep(5)
+
+    # This is a function for admin page code
+    def admin(self):
+        employeename = "sudhir"
+        username = "sudhir006"
+        password = "ASDW123fgh@"
+
+        # This code is use for executing to admin page by xpath
+        clickadmin_xpath = '//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[1]/a/span'
+        clickadmin1 = self.driver.find_element(by=By.XPATH, value=clickadmin_xpath)
+        clickadmin1.click()
+        time.sleep(6)
+
+        # This code is use for executing to add employee by xpath
+        adminaddbutton_xpath = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div[2]/div[1]/button/i'
+        adminaddbutton1 = self.driver.find_element(by=By.XPATH, value=adminaddbutton_xpath)
+        adminaddbutton1.click()
+        time.sleep(10)
+
+        # This code is use for executing to user role to scroll by xpath
+        userrole_xpath = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[1]/div/div[2]/div/div/div[1]'
+        userrole1 = self.driver.find_element(by=By.XPATH, value=userrole_xpath)
+        userrole1.click()
+        time.sleep(2)
+
+        # This code is use for executing to user role to selection by xpath
+        userrolescroll_xpath = '/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[1]/div/div[2]/div/div/div[1]'
+        userrolescroll1 = self.driver.find_element(by=By.XPATH, value=userrolescroll_xpath)
+        userrolescroll1.click()
+        time.sleep(2)
+
+        # This code is use for executing to employee name by xpath
+        employeename_xpath = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[2]/div/div[2]/div/div/input'
+        employeename1 = self.driver.find_element(by=By.XPATH, value=employeename_xpath)
+        employeename1.send_keys(employeename)
+        time.sleep(2)
+
+        # This code is use for executing to status bar to scroll by xpath
+        status_xpath = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[3]/div/div[2]/div/div/div[2]/i'
+        status1 = self.driver.find_element(by=By.XPATH, value=status_xpath)
+        status1.click()
+        time.sleep(2)
+
+        # This code is use for executing to status selection by xpath
+        statusscroll_xpath = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[3]/div/div[2]/div/div'
+        statusscroll1 = self.driver.find_element(by=By.XPATH, value=statusscroll_xpath)
+        statusscroll1.click()
+        time.sleep(2)
+
+        # This code is use for executing to username by xpath
+        username_xpath = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[4]/div/div[2]/input'
+        username1 = self.driver.find_element(by=By.XPATH, value=username_xpath)
+        username1.send_keys(username)
+        time.sleep(2)
+
+        # This code is use for executing to password by xpath
+        password_xpath = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[2]/div/div[1]/div/div[2]/input'
+        password1 = self.driver.find_element(by=By.XPATH, value=password_xpath)
+        password1.send_keys(password)
+        time.sleep(2)
+
+        # This code is use for executing to confirm password by xpath
+        confirmpassword_xpath = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[2]/div/div[2]/div/div[2]/input'
+        confirmpassword1 = self.driver.find_element(by=By.XPATH, value=confirmpassword_xpath)
+        confirmpassword1.send_keys(password)
+        time.sleep(2)
+
+        # This code is use for executing to save the admin data by xpath
+        adminsave_xpath = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[3]/button[2]'
+        adminsave1 = self.driver.find_element(by=By.XPATH, value=adminsave_xpath)
+        adminsave1.click()
+        time.sleep(2)
+
+        # This code is use for executing to selection user account by xpath
+        account_xpath = '//*[@id="app"]/div[1]/div[1]/header/div[1]/div[2]/ul/li/span'
+        account1 = self.driver.find_element(by=By.XPATH, value=account_xpath)
+        account1.click()
+        time.sleep(2)
+
+        # This code is use for executing to logout user by xpath
+        logout_xpath = '//*[@id="app"]/div[1]/div[1]/header/div[1]/div[2]/ul/li/ul/li[4]/a'
+        logout1 = self.driver.find_element(by=By.XPATH, value=logout_xpath)
+        logout1.click()
+        time.sleep(2)
+
+
+
+
+
+
+g = orangehrm()
+
+g.login()
+
+g.createemployee()
+
+g.admin()
+
+g.login()
+
